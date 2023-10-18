@@ -41,23 +41,23 @@ ext.runtime.onExtensionClick.addListener(async () => {
     tab = await ext.tabs.create({
       text: title,
       icon: "./assets/128.png",
-      mutable: true,
+      // mutable: true,
     });
 
-    const aspectRatio = 960 / 600;
+    const aspectRatio = 1280 / 720;
     const minWidth = 960;
     const minHeight = minWidth / aspectRatio;
 
     window = await ext.windows.create({
       center: true,
-      fullscreenable: true,
+      resizable: false,
       title,
       icon: "./assets/128.png",
       vibrancy: false,
       frame: false,
       titleBarStyle: "inset",
-      width: minWidth,
-      height: minHeight,
+      width: 1280,
+      height: 720,
       minWidth,
       minHeight,
       aspectRatio,
